@@ -16,9 +16,9 @@ export default function Page() {
   const [ATContests, setATContests] = useState(2);
 
   return (
-    <div className={`grid grid-cols-[1fr_2fr_2fr] gap-4 p-4 w-full h-90vh ${styles.main}`}>
+        <div className={`grid grid-cols-[1fr_2fr_2fr] gap-4 p-4 w-full h-full ${styles.main}`}>
       {/* First Grid: Profile Section */}
-      <div className={`text-white rounded-lg p-4 flex flex-col h-full justify-center items-center ${styles.profile} ${styles.border}`}>
+      <div className={`text-white rounded-lg  flex flex-col  justify-center items-center ${styles.profile} ${styles.border}`}>
         <div className="text-xl font-semibold">Profile</div>
         
       </div>
