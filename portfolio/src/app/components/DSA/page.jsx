@@ -5,6 +5,7 @@ import Particle from '../particles';
 import styles from './dsa.module.css';
 export default function Page() {
   const [totalQ, setTotalQ] = useState(400);
+  const [totalDays, setTotalDays] = useState(400);
   const [easyQ, setEasyQ] = useState(150);
   const [mediumQ, setMediumQ] = useState(200);
   const [hardQ, setHardQ] = useState(50);
@@ -15,30 +16,38 @@ export default function Page() {
   const [ATContests, setATContests] = useState(2);
 
   return (
-    <div className="grid grid-cols-[1fr_2fr_2fr] gap-4 p-4 w-full min-h-screen ">
+    <div className={`grid grid-cols-[1fr_2fr_2fr] gap-4 p-4 w-full h-90vh ${styles.main}`}>
       {/* First Grid: Profile Section */}
-      <div className={`text-white rounded-lg  p-4 flex flex-col h-full justify-center items-center ${styles.section}`}>
+      <div className={`text-white rounded-lg p-4 flex flex-col h-full justify-center items-center ${styles.profile} ${styles.border}`}>
         <div className="text-xl font-semibold">Profile</div>
         
       </div>
 
       {/* Second Grid: Questions Section */}
-      <div className=" text-white rounded-lg shadow-lg p-4">
-<div className={ `flex flex-col ${styles.totalQ , styles.section}`}>
+      <div className=" flex flex-col items-between gap-5 text-white rounded-lg shadow-lg p-4">
+        {/* first box  */}
+        <div className='flex flex-row justify-around'>
+      <div className={ `flex flex-col rounded-lg p-4 justify-center items-center ${styles.totalQ} ${styles.border}`}>
       <div className="text-lg mt-2">Total Questions</div>
       <div className="text-5xl font-bold py-2">{totalQ}</div>
       </div>
+      <div className={ `flex flex-col rounded-lg p-4 justify-center items-center ${styles.totalQ} ${styles.border}`}>
+      <div className="text-lg mt-2">Total Active Days</div>
+      <div className="text-5xl font-bold py-2">{totalDays}</div>
+      </div>
+      </div>
 
-        <div className="flex flex-col gap-2">
-          <div className="flex justify-between">
-            <span className="text-lg">Easy</span>
-            <span className="text-lg font-bold">{easyQ}</span>
+      {/* second box  */}
+        <div className={`flex flex-col gap-3 ${styles.border}`}>
+          <div className="flex justify-around">
+            <span className="text-lg text-green-500">Easy</span>
+            <span className="text-lg text-green-500 font-bold">{easyQ}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-around text-yellow-500">
             <span className="text-lg">Medium</span>
             <span className="text-lg font-bold">{mediumQ}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-around text-red-500">
             <span className="text-lg">Hard</span>
             <span className="text-lg font-bold">{hardQ}</span>
           </div>
@@ -46,7 +55,7 @@ export default function Page() {
       </div>
 
       {/* Third Grid: Contests Section */}
-      <div className=" text-white rounded-lg shadow-lg p-4">
+      <div className="text-white rounded-lg shadow-lg p-4">
         <div className="text-xl font-semibold mb-4">Contests Summary</div>
         <div className="flex flex-col gap-2">
           <div className="flex justify-between">
