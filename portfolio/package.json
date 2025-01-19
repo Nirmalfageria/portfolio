@@ -14,7 +14,8 @@
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tsparticles": "^3.7.1"
+    "tsparticles": "^3.7.1",
+    "react-tsparticles": "^1.42.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

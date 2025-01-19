@@ -1,6 +1,9 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Particle from '../particles';
+
+
 export default function page() {
 
 const [totalQ ,settotalQ] = useState(400);
@@ -13,6 +16,7 @@ const [ATContests ,setATContests] = useState(2);
 
   return ( 
     <div className='flex flex-col w-full'>
+      <Particle/>
         <div className='flex flex-row w-full justify-evenly items-center'>
           <div className="flex flex-col justify-center items-center w-40 h-40 bg-white text-black rounded-lg shadow-lg ">
           <div className='text-xl  '>Total  Questions</div>  
