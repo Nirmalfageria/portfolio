@@ -24,7 +24,7 @@ export default function Page() {
       </div>
 
       {/* Second Grid: Questions Section */}
-      <div className=" flex flex-col items-between gap-5 text-white rounded-lg shadow-lg p-4">
+      <div className=" flex flex-col items-between gap-9 text-white rounded-lg shadow-lg p-4">
         {/* first box  */}
         <div className='flex flex-row justify-around'>
       <div className={ `flex flex-col rounded-lg p-4 justify-center items-center ${styles.totalQ} ${styles.border}`}>
@@ -38,7 +38,7 @@ export default function Page() {
       </div>
 
       {/* second box  */}
-        <div className={`flex flex-col gap-3 ${styles.border}`}>
+        <div className={`flex flex-col gap-4  rounded-lg p-4 ${styles.border}`}>
           <div className="flex justify-around">
             <span className="text-lg text-green-500">Easy</span>
             <span className="text-lg text-green-500 font-bold">{easyQ}</span>
@@ -52,11 +52,10 @@ export default function Page() {
             <span className="text-lg font-bold">{hardQ}</span>
           </div>
         </div>
-      </div>
+       {/* third box */}
 
-      {/* Third Grid: Contests Section */}
-      <div className="text-white rounded-lg shadow-lg p-4">
-        <div className="text-xl font-semibold mb-4">Contests Summary</div>
+        <div className={`text-white rounded-lg shadow-lg p-4 ${styles.border}`}>
+        <div className="text-xl font-semibold mb-4 text-center">Contests Summary</div>
         <div className="flex flex-col gap-2">
           <div className="flex justify-between">
             <span className="text-lg">Total Contests</span>
@@ -79,6 +78,11 @@ export default function Page() {
             <span className="text-lg font-bold">{ATContests}</span>
           </div>
         </div>
+      </div>
+
+      {/* Third Grid: Contests Section */}
+      <div></div>
+      
       </div>
 
       {/* Particle Effect */}
