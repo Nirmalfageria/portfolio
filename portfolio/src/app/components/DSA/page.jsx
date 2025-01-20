@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import Particle from '../particles';
 import styles from './dsa.module.css';
 import { CCData } from './api';
+// import { cookies } from 'next/headers';
 
 
 export default function Page(props) {
@@ -18,8 +19,26 @@ export default function Page(props) {
   const [CCContests, setCCContests] = useState(2);
   const [ATContests, setATContests] = useState(2);
   const [GFGContests, setGFGContests] = useState(2);
-  // console.log(props.usernames.codechef);
-  console.log(CCData(props.usernames.codechef));
+  const [ccData, setCcData] = useState(null);  // State to store fetched data
+  const [loading, setLoading] = useState(true); // Loading state to manage fetch state
+  const [error, setError] = useState(false);    // Error state for fetch errors
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await CCData(props.usernames.codechef); // Await the promise from CCData
+        setCcData(data);  // Set the fetched data to state
+        setLoading(false); // Set loading to false once the data is fetched
+      } catch (error) {
+        console.error('Error fetching CodeChef data:', error);
+        setError(true); // Set error state to true in case of error
+        setLoading(false); // Set loading to false in case of error
+      }
+    };
+
+    fetchData(); // Call fetchData on component mount
+  }, [props.usernames.codechef]); // Trigger effect when username changes
+
   return (
         <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4  p-2 w-full h-full ${styles.main}`}>
       {/* First Grid: Profile Section */}
@@ -113,9 +132,17 @@ export default function Page(props) {
       <div className="flex items-center gap-2">
         <span className="text-yellow-500 text-xl"></span>
         <span className="text-lg font-medium">CodeChef</span>
+        
       </div>
       {/* <iframe src="https://codechef-api.vercel.app/rating/fageria15"></iframe> */}
-      <span className="text-lg font-bold text-purple-600">⭐⭐</span>
+      <div className="text-lg font-bold text-white">
+  {ccData && ccData.stars ? ccData.stars : 'N/A'}
+</div>
+      <div className="text-lg font-bold text-white">
+  {ccData && ccData.highestRating ? ccData.highestRating : 'N/A'}
+</div>
+     
+ 
     </div>
 
     {/* CodeForces */}

@@ -13,7 +13,7 @@ import axios from 'axios';
 };
 
 const CCData = async(ccusername) => {
-    console.log(ccusername);
+    // console.log(ccusername);
   try {
     const response = await axios.get(`https://codechef-api.vercel.app/handle/${ccusername}`);
     return response.data;
