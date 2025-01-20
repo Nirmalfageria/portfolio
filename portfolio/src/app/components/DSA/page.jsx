@@ -137,10 +137,10 @@ export default function Page() {
     {/* GeeksforGeeks */}
     <div className="flex justify-between items-center">
       <div className="flex items-center gap-2">
-        <span className="text-green-500 text-xl">⭐</span>
+        <span className="text-green-500 text-xl"></span>
         <span className="text-lg font-medium">GeeksforGeeks</span>
       </div>
-      <span className="text-lg font-bold text-green-600">5 Stars</span>
+      <span className="text-lg font-bold text-green-600">5 Stars ⭐</span>
     {/* </div> */}
   </div>
 </div>
