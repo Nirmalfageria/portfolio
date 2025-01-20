@@ -3,8 +3,8 @@ import Navbar from './components/Navbar/page';
 import DSA from '../app/components/DSA/page'
 export default function Home() {
   const usernames = {
-    leetcode: 'fageria15',
-    codeforces: 'fageria15',
+    leetcode: 'nirmal_fageria',
+    codeforces: 'nirmalfageria15',
     codechef: 'fageria15',
     atcoder: 'fageria15',
     geeksforgeeks: 'fageria15'

@@ -3,7 +3,7 @@
 import React, { useState ,useEffect } from 'react';
 import Particle from '../particles';
 import styles from './dsa.module.css';
-import { CCData } from './api';
+import { LCContestData ,CCData } from './api';
 // import { cookies } from 'next/headers';
 
 
@@ -20,6 +20,7 @@ export default function Page(props) {
   const [ATContests, setATContests] = useState(2);
   const [GFGContests, setGFGContests] = useState(2);
   const [ccData, setCcData] = useState(null);  // State to store fetched data
+  const [lccontestData, setlccontestData] = useState(null);  // State to store fetched data of lc contests
   const [loading, setLoading] = useState(true); // Loading state to manage fetch state
   const [error, setError] = useState(false);    // Error state for fetch errors
 
@@ -27,7 +28,10 @@ export default function Page(props) {
     const fetchData = async () => {
       try {
         const data = await CCData(props.usernames.codechef); // Await the promise from CCData
+        const lccdata = await LCContestData(props.usernames.leetcode); // Await the promise from LCContestData
+
         setCcData(data);  // Set the fetched data to state
+        setlccontestData(lccdata);  // Set the fetched data to state
         setLoading(false); // Set loading to false once the data is fetched
       } catch (error) {
         console.error('Error fetching CodeChef data:', error);
@@ -37,8 +41,8 @@ export default function Page(props) {
     };
 
     fetchData(); // Call fetchData on component mount
-  }, [props.usernames.codechef]); // Trigger effect when username changes
-
+  }, [props.usernames.codechef ,props.usernames.leetcode]); // Trigger effect when username changes
+console.log(lccontestData)
   return (
         <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4  p-2 w-full h-full ${styles.main}`}>
       {/* First Grid: Profile Section */}
@@ -87,7 +91,7 @@ export default function Page(props) {
           </div>
           <div className="flex justify-between text-yellow-500">
             <span className="text-lg">LeetCode</span>
-            <span className="text-lg font-bold">{leetcodeContests}</span>
+            <span className="text-lg font-bold">{lccontestData && lccontestData.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
           </div>
           <div className="flex justify-between text-blue-500">
             <span className="text-lg">CodeChef</span>
@@ -121,28 +125,30 @@ export default function Page(props) {
         <img src="/icons/leetcode-badge.png" alt="LeetCode Badge" className="w-6 h-6" />
         <span className="text-lg font-medium">LeetCode</span>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="text-lg font-bold text-green-600">2200</span>
+      {/* <div className="flex items-center gap-2"> */}
+      <span className="text-xl font-bold ">
+         {lccontestData && lccontestData.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}
+          </span>
+
         <span className="text-sm bg-green-200 text-green-800 px-2 py-1 rounded-full">Gold</span>
-      </div>
+      {/* </div> */}
     </div>
 
     {/* CodeChef */}
     <div className="flex justify-between items-center">
-      <div className="flex items-center gap-2">
+      <div className="flex  gap-2">
         <span className="text-yellow-500 text-xl"></span>
-        <span className="text-lg font-medium">CodeChef</span>
+        <span className="text-xl font-medium">CodeChef</span>
         
       </div>
       {/* <iframe src="https://codechef-api.vercel.app/rating/fageria15"></iframe> */}
-      <div className="text-lg font-bold text-white">
-  {ccData && ccData.stars ? ccData.stars : 'N/A'}
-</div>
-      <div className="text-lg font-bold text-white">
-  {ccData && ccData.highestRating ? ccData.highestRating : 'N/A'}
-</div>
-     
- 
+    
+      <span className="text-xl font-bold text-white">
+  {ccData && ccData.highestRating ? ccData.highestRating : 'N/A'}(max)
+
+</span>
+<span className="text-3xl font-bold text-yellow-400">
+{ccData && ccData.stars ? ccData.stars : 'N/A'}</span>
     </div>
 
     {/* CodeForces */}
