@@ -3,7 +3,10 @@
 import React, { useState } from 'react';
 import Particle from '../particles';
 import styles from './dsa.module.css';
-export default function Page() {
+import { CCData } from './api';
+
+
+export default function Page(props) {
   const [totalQ, setTotalQ] = useState(400);
   const [totalDays, setTotalDays] = useState(400);
   const [easyQ, setEasyQ] = useState(150);
@@ -15,7 +18,8 @@ export default function Page() {
   const [CCContests, setCCContests] = useState(2);
   const [ATContests, setATContests] = useState(2);
   const [GFGContests, setGFGContests] = useState(2);
-
+  // console.log(props.usernames.codechef);
+  console.log(CCData(props.usernames.codechef));
   return (
         <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4  p-2 w-full h-full ${styles.main}`}>
       {/* First Grid: Profile Section */}
@@ -110,6 +114,7 @@ export default function Page() {
         <span className="text-yellow-500 text-xl"></span>
         <span className="text-lg font-medium">CodeChef</span>
       </div>
+      {/* <iframe src="https://codechef-api.vercel.app/rating/fageria15"></iframe> */}
       <span className="text-lg font-bold text-purple-600">⭐⭐</span>
     </div>
 
