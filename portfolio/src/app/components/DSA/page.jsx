@@ -133,21 +133,27 @@ export default function Page(props) {
           <span className="text-2xl font-bold">{lccontestData?.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
           <span className="text-2xl font-bold">{lccontestData?.ratingBadge ? Math.round(lccontestData.ratingBadge) : 'N/A'}</span>
         </div>
+       
+        <div className="flex justify-between items-center">
+          <span className="text-lg font-medium">CodeChef</span>
+          <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
+          <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
+        </div>
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">CodeForces</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
         </div>
+       
         <div className="flex justify-between items-center">
-          <span className="text-lg font-medium">CodeChef</span>
+          <span className="text-lg font-medium">AtCoders</span>
+          <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-lg font-medium">CodeChef</span>
+
+        <div className="flex justify-between items-center my-3">
+          <span className="text-lg font-medium">GeeksForGeeks</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-lg font-medium">CodeChef</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
         </div>
       </div>
