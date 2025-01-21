@@ -59,7 +59,7 @@ export default function Page(props) {
     <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4 p-2 w-full h-full ${styles.main}`}>
       {/* Profile Section */}
       <div className={`text-white rounded-lg flex flex-col justify-around items-center ${styles.profile} ${styles.border} ${styles.griditem}`}>
-  <div className="text-2xl font-semibold mb-4">Profiles</div>
+  <div className="text-2xl font-semibold mb-4 pt-2">Profiles</div>
   {/* <div className="flex flex-col w-full justify-between px-4"> */}
     {[
       { name: "LeetCode", url: `https://leetcode.com/u/${props.usernames.leetcode}` },
@@ -151,18 +151,18 @@ export default function Page(props) {
       </div>
 
       {/* Rating Summary */}
-      <div className={`flex flex-col justify-between p-3 ${styles.border} rounded-lg shadow-lg ${styles.griditem}`}>
-        <div className="text-xl font-semibold mb-4 text-center my-3">Rating Summary</div>
+      <div className={`flex flex-col justify-around p-3 ${styles.border} rounded-lg shadow-lg ${styles.griditem}`}>
+        <div className="text-xl font-semibold  text-center pt-2 md:pb-8">Rating Summary</div>
         <div className="flex justify-between items-center">
-          <span className="text-xl font-medium">LeetCode</span>
-          <span className="text-2xl font-bold">{lccontestData?.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
-          <span className="text-2xl font-bold text-yellow-400">{lccontestData?.ratingBadge ? Math.round(lccontestData.ratingBadge) : 'N/A'}</span>
+          <span className="text-lg font-medium">LeetCode</span>
+          <span className="text-xl font-bold">{lccontestData?.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
+          <span className="text-xl font-bold text-yellow-400">{lccontestData?.ratingBadge ? Math.round(lccontestData.ratingBadge) : 'N/A'}</span>
         </div>
        
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">CodeChef</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
-          <span className="text-2xl font-bold text-yellow-400">{ccData?.stars || 'N/A'}</span>
+          <span className="text-xl font-bold text-yellow-400">{ccData?.stars || 'N/A'}</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">CodeForces</span>
