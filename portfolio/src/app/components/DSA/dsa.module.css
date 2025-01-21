@@ -7,10 +7,27 @@ box-shadow: 0 4px 8px rgba(210, 5, 5, 0.1);
 @media (max-width: 900px) {
     .main {
       grid-template-columns: 1fr; /* Stack grids vertically in mobile view */
+      justify-content: center;
+      align-items: center;
     }
   
     .griditem:nth-child(2) {
       order: -1; /* Move the 2nd grid to appear first */
+    }
+  
+    .griditem:nth-child(3) {
+      order: -1; /* Move the 2nd grid to appear first */
+      gap: 10px;
+ margin-left: 15px;
+ margin-right: 15px;
+
+    }
+    .griditem:nth-child(1) {
+      /* order: -1; Move the 2nd grid to appear first */
+      /* gap: 10px; */
+ margin-left: 15px;
+ margin-right: 15px;
+
     }
   }
 .profile{
