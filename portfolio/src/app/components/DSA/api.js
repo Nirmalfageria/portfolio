@@ -5,7 +5,7 @@ import axios from 'axios';
  const LCContestData = async (lcusername) => {
   try {
     const response = await axios.get(`https://alfa-leetcode-api.onrender.com/${lcusername}/contest`);
-    // console.log(response.data)
+    console.log(response.data)
     return response.data; // Return the data
 
   } catch (error) {

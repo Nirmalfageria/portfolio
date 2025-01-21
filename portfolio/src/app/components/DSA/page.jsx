@@ -33,6 +33,7 @@ export default function Page(props) {
         setCcData(data);  // Set the fetched data to state
         setlccontestData(lccdata);  // Set the fetched data to state
         setLoading(false); // Set loading to false once the data is fetched
+      
       } catch (error) {
         console.error('Error fetching CodeChef data:', error);
         setError(true); // Set error state to true in case of error
@@ -41,8 +42,14 @@ export default function Page(props) {
     };
 
     fetchData(); // Call fetchData on component mount
+    
+
   }, [props.usernames.codechef ,props.usernames.leetcode]); // Trigger effect when username changes
-console.log(lccontestData)
+// console.log(ccData)
+
+
+
+
   return (
         <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4  p-2 w-full h-full ${styles.main}`}>
       {/* First Grid: Profile Section */}
@@ -91,11 +98,11 @@ console.log(lccontestData)
           </div>
           <div className="flex justify-between text-yellow-500">
             <span className="text-lg">LeetCode</span>
-            <span className="text-lg font-bold">{lccontestData && lccontestData.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
+            <span className="text-lg font-bold">{lccontestData && lccontestData.contestAttend ? Math.round(lccontestData.contestAttend): 'N/A'}</span>
           </div>
           <div className="flex justify-between text-blue-500">
             <span className="text-lg">CodeChef</span>
-            <span className="text-lg font-bold">{CCContests}</span>
+            <span className="text-lg font-bold">{ccData && ccData.ratingData.length ? ccData.ratingData.length :'NA'}</span>
           </div>
           <div className="flex justify-between text-red-800">
             <span className="text-lg">CodeForces</span>
