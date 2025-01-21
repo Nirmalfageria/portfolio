@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Particle from '../particles';
 import styles from './dsa.module.css';
-import { LCContestData, CCData } from './api';
+import { LCContestData, CCData ,CFData } from './api';
 
 export default function Page(props) {
   const [totalQ, setTotalQ] = useState(400);
@@ -18,6 +18,7 @@ export default function Page(props) {
 
   const ccDataRef = useRef(null); // Persistent storage for CodeChef data
   const lccontestDataRef = useRef(null); // Persistent storage for LeetCode data
+  const CFContestsRef = useRef(null); // Persistent storage for CodeForces data
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -27,9 +28,11 @@ export default function Page(props) {
       try {
         const data = await CCData(props.usernames.codechef);
         const lccdata = await LCContestData(props.usernames.leetcode);
-
+       const cfdata = await CFData(props.usernames.codeforces);
         ccDataRef.current = data; // Store fetched data in ref
         lccontestDataRef.current = lccdata; // Store fetched data in ref
+       CFContestsRef.current = cfdata; // Store fetched data in ref
+
 
         setLoading(false);
       } catch (err) {
@@ -48,16 +51,38 @@ export default function Page(props) {
 
   useEffect(() => {
     setTotalContests(
-      (ccData?.ratingData?.length || 0) + (lccontestData?.contestAttend || 0)
+      (ccData?.ratingData?.length || 0) + (lccontestData?.contestAttend || 0) + (CFContestsRef?.contestAttend || 0)
     );
-  }, [ccData, lccontestData]);
+  }, [ccData, lccontestData , CFContestsRef]);
 
   return (
     <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4 p-2 w-full h-full ${styles.main}`}>
       {/* Profile Section */}
-      <div className={`text-white rounded-lg flex flex-col justify-center items-center ${styles.profile} ${styles.border}`}>
-        <div className="text-xl font-semibold">Profile</div>
+      <div className={`text-white rounded-lg flex flex-col justify-around items-center ${styles.profile} ${styles.border}`}>
+  <div className="text-2xl font-semibold mb-4">Profiles</div>
+  {/* <div className="flex flex-col w-full justify-between px-4"> */}
+    {[
+      { name: "LeetCode", url: `https://leetcode.com/u/${props.usernames.leetcode}` },
+      { name: "CodeChef", url: `https://www.codechef.com/users/${props.usernames.codechef}` },
+      { name: "CodeForces", url: `https://codeforces.com/profile/${props.usernames.codeforces}` },
+      { name: "AtCoder", url: `https://atcoder.jp/users/${props.usernames.atcoder}` },
+      { name: "GeeksForGeeks", url: `https://www.geeksforgeeks.org/user/${props.usernames.geeksforgeeks}/` },
+      { name: "GitHub", url: `https://github.com/${props.usernames.github}` },
+    ].map((platform, index) => (
+      <div key={index} className="flex w-full justify-between items-center mb-2 m-2 p-1 px-2 mx-2 border-b border-gray-700">
+        <span className="text-lg">{platform.name}</span>
+        <a
+          href={platform.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm bg-blue-500 hover:bg-blue-800 text-white px-3 py-1 rounded-md"
+        >
+          Go
+        </a>
       </div>
+    ))}
+  {/* </div> */}
+</div>
 
       {/* Questions Section */}
       <div className="flex flex-col items-between gap-9 text-white rounded-lg shadow-lg p-4">
@@ -127,17 +152,17 @@ export default function Page(props) {
 
       {/* Rating Summary */}
       <div className={`flex flex-col justify-between p-3 ${styles.border} rounded-lg shadow-lg`}>
-        <div className="text-xl font-semibold mb-4 text-center">Rating Summary</div>
+        <div className="text-xl font-semibold mb-4 text-center my-3">Rating Summary</div>
         <div className="flex justify-between items-center">
           <span className="text-xl font-medium">LeetCode</span>
           <span className="text-2xl font-bold">{lccontestData?.contestRating ? Math.round(lccontestData.contestRating) : 'N/A'}</span>
-          <span className="text-2xl font-bold">{lccontestData?.ratingBadge ? Math.round(lccontestData.ratingBadge) : 'N/A'}</span>
+          <span className="text-2xl font-bold text-yellow-400">{lccontestData?.ratingBadge ? Math.round(lccontestData.ratingBadge) : 'N/A'}</span>
         </div>
        
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">CodeChef</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
-          <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
+          <span className="text-2xl font-bold text-yellow-400">{ccData?.stars || 'N/A'}</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">CodeForces</span>

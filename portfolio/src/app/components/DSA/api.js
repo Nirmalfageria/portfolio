@@ -24,4 +24,15 @@ const CCData = async(ccusername) => {
     throw error;
   }
 }
-export { LCContestData, CCData }; // Export the functions for use in the component
+
+const CFData = async(cfusername) => {
+    try {
+        const response = await axios.get(`https://codeforces.com/api/user.info?handles=${cfusername}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching CodeForces data:', error);
+        throw error;
+    }
+}
+
+export { LCContestData, CCData ,CFData}; // Export the functions for use in the component

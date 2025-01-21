@@ -7,7 +7,8 @@ export default function Home() {
     codeforces: 'nirmalfageria15',
     codechef: 'fageria15',
     atcoder: 'fageria15',
-    geeksforgeeks: 'fageria15'
+    geeksforgeeks: 'nirmalfageria15',
+    github: 'Nirmalfageria',
   }; // Example object of usernames
   
   return (
