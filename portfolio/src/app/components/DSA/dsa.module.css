@@ -4,6 +4,21 @@ box-shadow: 0 4px 8px rgba(210, 5, 5, 0.1);
 }
 /* height: 90vh !important; */
 
+@media (max-width: 900px) {
+    .main {
+      grid-template-columns: 1fr; /* Stack grids vertically in mobile view */
+    }
+  
+    .griditem:nth-child(2) {
+      order: -1; /* Move the 2nd grid to appear first */
+    }
+  }
+.profile{
+    @media(max-width:900px){
+        /* height: 50%; */
+    }
+}
+
 .totalQ{
     width: 40%;
     height: 100%;

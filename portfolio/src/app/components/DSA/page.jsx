@@ -58,7 +58,7 @@ export default function Page(props) {
   return (
     <div className={`grid grid-cols-[1.5fr_3fr_2fr] gap-4 p-2 w-full h-full ${styles.main}`}>
       {/* Profile Section */}
-      <div className={`text-white rounded-lg flex flex-col justify-around items-center ${styles.profile} ${styles.border}`}>
+      <div className={`text-white rounded-lg flex flex-col justify-around items-center ${styles.profile} ${styles.border} ${styles.griditem}`}>
   <div className="text-2xl font-semibold mb-4">Profiles</div>
   {/* <div className="flex flex-col w-full justify-between px-4"> */}
     {[
@@ -85,15 +85,15 @@ export default function Page(props) {
 </div>
 
       {/* Questions Section */}
-      <div className="flex flex-col items-between gap-9 text-white rounded-lg shadow-lg p-4">
+      <div className={`flex flex-col items-between gap-9 text-white rounded-lg shadow-lg p-4 ${styles.griditem}`}>
         {/* Total Questions and Active Days */}
         <div className="flex flex-row justify-around">
           <div className={`flex flex-col rounded-lg p-4 justify-center items-center ${styles.totalQ} ${styles.border}`}>
-            <div className="text-lg mt-2">Total Questions</div>
+            <div className="text-lg mt-2 text-center md:text-sm">Total Questions</div>
             <div className="text-5xl font-bold py-2">{totalQ}</div>
           </div>
           <div className={`flex flex-col rounded-lg p-4 justify-center items-center ${styles.totalQ} ${styles.border}`}>
-            <div className="text-lg mt-2">Total Active Days</div>
+            <div className="text-lg mt-2 text-center">Total Active Days</div>
             <div className="text-5xl font-bold py-2">{totalDays}</div>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Page(props) {
       </div>
 
       {/* Rating Summary */}
-      <div className={`flex flex-col justify-between p-3 ${styles.border} rounded-lg shadow-lg`}>
+      <div className={`flex flex-col justify-between p-3 ${styles.border} rounded-lg shadow-lg ${styles.griditem}`}>
         <div className="text-xl font-semibold mb-4 text-center my-3">Rating Summary</div>
         <div className="flex justify-between items-center">
           <span className="text-xl font-medium">LeetCode</span>
@@ -176,7 +176,7 @@ export default function Page(props) {
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
         </div>
 
-        <div className="flex justify-between items-center my-3">
+        <div className="flex justify-between items-center ">
           <span className="text-lg font-medium">GeeksForGeeks</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
           <span className="text-xl font-bold text-white">{ccData?.highestRating || 'N/A'}</span>
