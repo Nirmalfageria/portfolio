@@ -13,7 +13,7 @@ function AboutCard() {
             <br />
             {/* I am currently employed as a software developer at Juspay.
             <br /> */}
-            I currently pursing my B.Tech in Electrical and Electronics Engineering from NIT Calicut.
+            I currently pursuing my B.Tech in Electrical and Electronics Engineering from NIT Calicut.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
