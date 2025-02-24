@@ -77,7 +77,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://github.com/soumyajit4419"
+                  href="https://x.com/NirmalFageria?t=3GQhhhCIU-Fmi1c-iesd8g&s=09"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
