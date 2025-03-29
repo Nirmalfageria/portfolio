@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import tathva from "../../Assets/Projects/tathva.png";
 import rig from "../../Assets/Projects/rig.png";
-
+import videotube from "../../Assets/Projects/videotube.png";
 
 function Projects() {
   return (
@@ -22,10 +22,10 @@ function Projects() {
             <ProjectCard
               imgPath={rig}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="RIG Website"
+              description="Designed and developed the frontend for the RIG club website, ensuring a smooth and user-friendly experience. A platform for managing activities, communication, and resource sharing. Built with Next.js, Node.js, and MongoDB, it features event and project management, plus real-time notifications to keep members engaged. Integrated GSAP animations for interactive transitions, enhancing visual appeal and usability. 🚀"
+              ghLink="https://github.com/rig-website/rig_web"
+              demoLink="https://rignitc.com/"
             />
           </Col>
 {/*  */}
@@ -34,21 +34,21 @@ function Projects() {
             <ProjectCard
               imgPath={tathva}
               isBlog={false}
-              title="RIG "
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="Tathva'24"
+              description="Led the frontend development for Tathva'24, ensuring a seamless and engaging user experience. Built with Next.js, Tailwind CSS, and GSAP, the website featured smooth animations, real-time event updates, dynamic scheduling, and an intuitive registration system. Leveraged GSAP with ScrollTrigger to create fluid, interactive animations, enhancing visual appeal and user engagement. 🚀"
+              ghLink="https://github.com/Tathva-24/t24-frontend-main"
+              demoLink="https://www.tathva.org/"              
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              // imgPath={}
+              imgPath={videotube}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="VideoTube"
+              description="A backend-heavy video-sharing platform inspired by YouTube, designed for video uploads, playback, and engagement tracking. It supports real-time likes, dislikes, and tweets, ensuring interactive experiences. Built with Node.js, MongoDB, and cloud storage, the platform focuses on scalability, optimized streaming, and secure data management. Future enhancements include recommendations, comments, and analytics to improve discovery. 🚀"
+              ghLink="https://github.com/Nirmalfageria/Backend_Chai"
+            
             />
           </Col>
 
