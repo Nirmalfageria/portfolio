@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website - v1.0<br/>
-  <a href="https://nirmalfageria.vercel.app/" target="_blank">soumyajit.tech</a>
+  <a href="https://nirmalfageria.vercel.app/" target="_blank">Nirmal Fageria</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme.png" />
