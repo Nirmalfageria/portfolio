@@ -316,7 +316,15 @@ button:focus {
     padding-bottom: 2em !important;
   }
 }
-
+.img-fluid1{
+  height: 40vh;
+  width: 40vh;
+  border-radius: 50%;
+  @media(max-width: 967px){
+    height: 30vh;
+    width: 30vh;
+  }
+}
 .home-about-section {
   position: relative;
   padding-bottom: 70px !important;
