@@ -316,20 +316,7 @@ button:focus {
     padding-bottom: 2em !important;
   }
 }
-.img-fluid {
-  height: 20vw;
-  width: 20vw;
-  border-radius: 50%;
-  object-fit: object-fit;
-  @media(max-width:767px){
-    height: 40vw;
-    width: 40vw;
-  }
-  @media(max-width:575px){
-    height: 50vw;
-    width: 50vw;
-  }
-}
+
 .home-about-section {
   position: relative;
   padding-bottom: 70px !important;
