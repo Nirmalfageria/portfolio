@@ -1,70 +1,58 @@
-<h2 align="center">
-  Portfolio Website - v1.0<br/>
-  <a href="https://nirmalfageria.vercel.app/" target="_blank">Nirmal Fageria</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme.png" />
-</div>
+# 🌱 Nirmal Fageria - Portfolio Website
 
-<br/>
+Welcome to the official portfolio website of **Nirmal Fageria**. This project is designed to showcase my work, skills, and projects in a visually appealing and professional way. Visit the live site here: [nirmalfageria.vercel.app](https://nirmalfageria.vercel.app)
 
-<!-- <center>
+---
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+## 🚀 Features
 
-</center> -->
+- ✅ Fully Responsive Design
+- ✅ Modern Multi-Page Layout
+- ✅ Built with React.js
+- ✅ Deployed on Vercel
+- ✅ Easy to Customize and Extend
+- ✅ Fast Load Time and Optimized UI
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/Nirmalfageria/portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/Nirmalfageria/portfolio/issues">Request Feature</a>
-</h3>
+---
 
+## 🛠️ Built With
 
-## Built With
+- [React.js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Vercel](https://vercel.com/)
+- [VS Code](https://code.visualstudio.com/)
 
-My personal portfolio <a href="https://nirmalfageria.vercel.app/" target="_blank">Nirmal Fageria</a> which features some of my github projects as well as my resume and technical skills.<br/>
+---
 
-This project was built using these technologies.
+ 📁 Folder Structure
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+bash
+portfolio/
+├── public/
+│   └── assets, favicon, etc.
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
 
-## Features
+📦 Getting Started
+git clone https://github.com/Nirmalfageria/portfolio.git
+cd portfolio
+npm install
+npm start
 
-**📖 Multi-Page Layout**
+## 📬 Contact
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+Feel free to reach out to me via the following platforms:
 
-**📱 Fully Responsive**
-
-## Getting Started
-
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
-
-## 🛠 Installation and Setup Instructions
-
-1. Installation: `npm install`
-
-2. In the project directory, you can run: `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
-
-## Usage Instructions
-
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
-
-
+- 📧 Email: [nirmalfageria@example.com](mailto:nirmalfageria15@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/nirmalfageria](https://www.linkedin.com/in/nirmal-fageria-11bab125a)
+- 🐦 Twitter: [twitter.com/NirmalFageria](https://twitter.com/NirmalFageria)
+- 📷 Instagram: [instagram.com/nirmal_fageria](https://www.instagram.com/nirmal_fageria/)
 
